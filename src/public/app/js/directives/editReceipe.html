@@ -1,0 +1,90 @@
+			<div class="panel panel-primary">
+				<div class="panel-heading" translate="RECEIPE_ACTIONS"></div>
+				<div class="panel-body">
+					<form name="addReceipeForm">
+					<div class="row" ng-class="{'has-error': nameError}">
+						<div class="col-sm-3">
+							<label class="label label-primary" translate="Recipe.name"></label>
+						</div>
+						<div class="col-sm-9">
+						  	<input 	type="text"
+						  			class="form-control"
+						  			placeholder="name"
+						  			aria-describedby="basic-addon1"
+						  			name="name"
+						  			ng-model="receipe.name"
+						  			ng-change="checkName()"
+						  			required="true">
+						  	<span class="text-danger" ng-show="nameError" ng-bind="nameErrorErrorText"></span>
+						</div>
+					</div>
+					<hr>
+					<div class="row" ng-class="{'has-error': descriptionError}">
+						<div class="col-sm-3">
+							<label class="label label-primary" translate="Recipe.description"></label>
+						</div>
+						<div class="col-sm-9">
+							<textarea 	class="form-control"
+										rows="3"
+										placeholder="description"
+										ng-model="receipe.description"
+										ng-change="checkDesc()"
+										required="true">
+							</textarea>
+						  	<span class="text-danger" ng-show="descriptionError" ng-bind="descriptionErrorText"></span>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-sm-3">
+							<label class="label label-primary" translate="Recipe.image"></label>
+						</div>
+						<div class="col-sm-9">
+							<button class="btn btn-success btn-xs"
+									 ngf-select ng-model="files"
+									 ngf-multiple="multiple">
+									 {{'SELECT_FILE' | translate}}
+							</button>
+							<button class="btn btn-danger btn-xs"
+									ng-if="readyReceipe && readyReceipe.image"
+									ng-click="deleteImage()">
+									{{'DELETE_IMAGE' | translate}}
+							</button>
+							<button ng-show="files[0] != null"
+									 class="btn btn-danger btn-xs"
+									 ng-click="removeImage()">
+									 {{'CANCEL' | translate}}
+							</button>
+							<img 	ng-if="readyReceipe && readyReceipe.image"
+									width="120"
+									height="120"
+									class="img-rounded"
+									ng-src="{{receipe.image}}">
+							<img 	width="100"
+									height="100"
+									class="img-rounded"
+									ng-show="files[0] != null"
+									ngf-src="files[0]"/>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="container" ng-if="readyReceipe">
+							<div class="col-md-6">
+								<button class="btn btn-success center-block"
+									ng-click="updateReceipe()" translate="UPDATE">
+								</button>
+							</div>
+							<div class="col-md-6">
+								<button class="btn btn-danger center-block"
+									ng-click="deleteReceipe()" translate="DELETE">
+								</button>
+							</div>
+						</div>
+						<button class="btn btn-success center-block"
+								ng-if="!readyReceipe"
+								ng-click="addNewReceipe()" translate="SUBMIT"></button>
+					</div>
+					</form>
+				</div>
+			</div>

@@ -1,0 +1,46 @@
+{
+  "name": "cookBook",
+  "version": "1.0.0",
+  "description": "app",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "bower": "^1.4.1",
+    "consolidate": "^0.13.1",
+    "ejs": "^2.3.3",
+    "express": "^4.13.1",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-express-server": "^0.5.1",
+    "grunt-githooks": "^0.3.1",
+    "grunt-mongo-backup": "0.0.2",
+    "grunt-ng-annotate": "^1.0.1",
+    "grunt-nodemon": "^0.4.0",
+    "grunt-open": "^0.2.3",
+    "grunt-shell": "^1.1.2",
+    "jade": "^1.11.0",
+    "mocha": "^2.2.5",
+    "mocha-mongo": "^0.2.0",
+    "mongobackup": "^0.1.8",
+    "mongodb": "^2.0.33",
+    "mongoose": "^4.0.6",
+    "multer": "^0.1.8",
+    "ng-annotate": "^1.0.1",
+    "serve-favicon": "^2.2.1",
+    "shortid": "^2.2.2",
+    "should": "^7.0.2",
+    "supertest": "^1.0.1"
+  },
+  "scripts": {
+    "test": "test",
+    "postinstall": "bash ./post_install.sh"
+  },
+  "keywords": [
+    "tweety"
+  ],
+  "author": "vitaliy chorniy",
+  "license": "BSD-3-Clause"
+}

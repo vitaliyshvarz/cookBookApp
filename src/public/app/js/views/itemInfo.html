@@ -1,0 +1,75 @@
+<div class="container">
+	<a class="btn btn-warning btn-xs" href="#/main/allReceipes" translate="BACK"></a>
+	<hr>
+	<div>
+		<div class="btn-group btn-group-justified" role="group">
+		  	<a 	ng-class="showReceipe ? 'btn-success' : 'btn-default'"
+	  			href="#"
+	  			ng-click="showSection('showReceipe')"
+	  			class="btn">
+	  			{{'RECEIPE' | translate}}
+		  	</a>
+		  	<a 	ng-class="showEdit ? 'btn-success' : 'btn-default'"
+		  		href="#"
+		  		class="btn"
+		  		ng-click="showSection('showEdit')">
+		  		{{'EDIT' | translate}}
+		  	</a>
+		  	<a 	ng-class="showHistory ? 'btn-success' : 'btn-default'"
+	  			href="#"
+	  			ng-click="showSection('showHistory')"
+	  			class="btn">
+	  			{{'HISTORY' | translate}}
+		  	</a>
+
+		</div>
+	</div>
+
+	<div ng-if="showReceipe">
+		<div class="panel panel-default">
+		  <div class="panel-heading" ng-bind="receipe.name"></div>
+		  <div class="panel-body">
+		  	<span class="label label-warning center-block">{{'CREATED' | translate; receipe.date | date}}</span>
+		  	<hr>
+		  	<img class="center-block" width="500" height="500" ng-src="{{receipe.image}}" />
+		  	<hr>
+		  	<p ng-bind="receipe.description"></p>
+		  </div>
+		</div>
+	</div>
+
+	<div ng-if="showHistory">
+		<h3 translate="HISTORY"></h3>
+		<div class="panel panel-primary">
+		  <div class="panel-heading" ng-bind="receipe.name"></div>
+		  <div class="panel-body">
+		  		<!-- Receipe History -->
+				<div class="table-responsive">
+				  <table class="table">
+				  	<tr>
+						<th translate="Recipe.name"></th>
+						<th translate="Recipe.modified"></th>
+						<th translate="Recipe.description"></th>
+						<th translate="Recipe.image"></th>
+					</tr>
+				    <tr ng-repeat="historyItem in history">
+						<td>{{historyItem.name}}</td>
+						<td>{{historyItem.date | date:'MM/dd/yyyy @ h:mma'}}</td>
+						<td>{{historyItem.description}}</td>
+						<td><img width="50"
+								 height="50"
+								 class="img-rounded"
+								 ng-src="{{historyItem.image}}"/>
+						</td>
+					</tr>
+				  </table>
+				</div>
+		  </div>
+		</div>
+	</div>
+
+	<div ng-if="showEdit">
+		<h3 translate="EDIT"></h3>
+		<edit-receipe receipe="receipe"></edit-receipe>
+	</div>
+</div>

@@ -1,0 +1,56 @@
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/main">
+        <span class="glyphicon glyphicon-cutlery"></span>
+      </a>
+      <a class="navbar-brand" href="#/main">cookBookApp</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/main" translate="Menu.main_page"></a></li>
+        <li><a href="#/main/allReceipes" translate="Menu.all_receipes"></a></li>
+        <li><a href="#/main/addRecipe" translate="Menu.add_receipe"></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" translate="LANG"><span class="label label-warning">{{lang}}</span><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+	            <button class="btn btn-xs navbar-btn center-block"
+					ng-class="lang === 'en' ? 'btn-success' : 'btn-warning'"
+					ng-click="changeLanguage('en')"
+					translate="BUTTON_LANG_EN">
+				</button>
+			</li>
+            <li>
+	            <button  ng-class="lang === 'de' ? 'btn-success' : 'btn-warning'"
+					             class="btn btn-xs navbar-btn center-block"
+					             ng-click="changeLanguage('de')"
+					             translate="BUTTON_LANG_DE">
+				      </button>
+			</li>
+            <li>
+            	<button ng-class="lang === 'uk' ? 'btn-success' : 'btn-warning'"
+            					class="btn btn-xs navbar-btn center-block"
+            					ng-click="changeLanguage('uk')"
+            					translate="BUTTON_LANG_UK">
+				      </button>
+			</li>
+            <li role="separator" class="divider"></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="row anim" app-view-segment="1"></div>

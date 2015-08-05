@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-primary">
+			  <div class="panel-heading" translate="RECEIPES"></div>
+
+			  <!-- Receipes -->
+			  <div class="table-responsive">
+				  <table class="table">
+				  	<tr>
+				  		<th>id</th>
+						<th translate="Recipe.name"></th>
+						<th translate="Recipe.description"></th>
+						<th translate="Recipe.image"></th>
+					</tr>
+				    <tr ng-repeat="recipe in recipes">
+						<td>{{recipe._id}}</td>
+						<td>{{recipe.name}}</td>
+						<td>{{recipe.shortText}}</td>
+						<td><img width="50"
+								 height="50"
+								 class="img-rounded"
+								 ng-src="{{recipe.image}}"/>
+						</td>
+						<td ><a class="btn btn-success" ng-href="#/main/{{recipe._id}}">{{'MORE' | translate}}</a></td>
+					</tr>
+				  </table>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+
