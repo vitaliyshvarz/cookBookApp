@@ -39,7 +39,7 @@
         }
 
         /**
-        *   Get receipe
+        *   Get receipe with history
         *   @return {object} promise, one receipe
         */
         function getReceipe(receipeId){

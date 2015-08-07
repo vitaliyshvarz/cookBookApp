@@ -61,7 +61,8 @@ router.delete('/api/recipes', function(req, res){
 });
 
 /**
-*	Return one receipe by id
+* Return one receipe by id
+* @params{string} receipe id - req.query.id
 */
 router.get('/api/recipe/:id', function(req, res){
 	Recipes.findOne({ _id: req.params.id }, function(err, recipe) {
@@ -73,7 +74,7 @@ router.get('/api/recipe/:id', function(req, res){
 });
 
 /**
-*	Create new receipeHistory item
+* Create new receipeHistory item
 */
 router.post('/api/recipe_history', function(req, res){
 	var newRecipe = new RecipeHistory({
@@ -92,7 +93,7 @@ router.post('/api/recipe_history', function(req, res){
 });
 
 /**
-*	Return  history items
+* Return  history items
 */
 router.get('/api/recipe_history', function(req, res){
 	RecipeHistory.find({}, function(err, history) {
@@ -102,7 +103,7 @@ router.get('/api/recipe_history', function(req, res){
 });
 
 /**
-*	Create new receipe
+* Create new receipe
 */
 router.post('/api/recipes', function(req, res){
 	var newRecipe = new Recipes({
@@ -120,7 +121,7 @@ router.post('/api/recipes', function(req, res){
 });
 
 /**
-*	Update receipe
+* Update receipe
 */
 router.post('/api/update_receipe', function(req, res){
 	var newRecipe = {
@@ -138,7 +139,7 @@ router.post('/api/update_receipe', function(req, res){
 });
 
 /**
-*	delete file
+* Delete file
 */
 router.post('/api/delete_file', function(req, res){
 	fs.unlinkSync('src/public/app/' + req.body.file, function (err) {
@@ -147,6 +148,9 @@ router.post('/api/delete_file', function(req, res){
 	});
 });
 
+/**
+* Upload file
+*/
 router.post('/api/photo', function(req, res){
 	if(done === true){
 		res.end("File uploaded.");

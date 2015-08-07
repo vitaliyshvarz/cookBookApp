@@ -19,10 +19,6 @@
 
 		$scope.lang = $translate.use();
 
-	    $scope.addReceipe = function(data){
-	    	recipeFactory.addNewReceipe(data);
-	    };
-
 	    // change language
 		$scope.changeLanguage = function (langKey) {
 			$translate.use(langKey);
