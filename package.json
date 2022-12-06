@@ -13,7 +13,7 @@
     "grunt-cli": "^0.1.13",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-jshint": "^0.11.2",
-    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-express-server": "^0.5.1",
     "grunt-githooks": "^0.3.1",
     "grunt-mongo-backup": "0.0.2",
@@ -27,12 +27,12 @@
     "mongobackup": "^0.1.8",
     "mongodb": "^2.0.33",
     "mongoose": "^4.0.6",
-    "multer": "^0.1.8",
+    "multer": "^1.4.5-lts.1",
     "ng-annotate": "^1.0.1",
     "serve-favicon": "^2.2.1",
     "shortid": "^2.2.2",
     "should": "^7.0.2",
-    "supertest": "^1.0.1"
+    "supertest": "^6.3.2"
   },
   "scripts": {
     "test": "test",
