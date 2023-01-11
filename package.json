@@ -22,7 +22,7 @@
     "grunt-open": "^0.2.3",
     "grunt-shell": "^1.1.2",
     "jade": "^1.11.0",
-    "mocha": "^2.2.5",
+    "mocha": "^10.2.0",
     "mocha-mongo": "^0.2.0",
     "mongobackup": "^0.1.8",
     "mongodb": "^2.0.33",
